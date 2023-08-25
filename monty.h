@@ -1,6 +1,8 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define LIMIT 1024
+
 #define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
@@ -58,4 +60,22 @@ typedef struct global_variable
 
 extern global_var var_global;
 
+/**
+ * struct token_s - data structure for the token
+ * @command: the argument the user passes
+ * @hasValue: flag that shows when value is present
+ * @value: the value associated with the argument
+ */
+
+typedef struct token_s
+{
+	char command[256];
+	int hasValue;
+	int value;
+} token_t;
+
+
 void push(stack **stack, __attribute__((unused))unsigned int line_number);
+token_t tokenizer(char *str);
+
+#endif

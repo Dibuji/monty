@@ -9,7 +9,10 @@
 
 int main(int argc, char **argv)
 {
-	char str[LIMIT];
+	token_t token;
+	char str[1024];
+	instruction_t *instructions;
+	int compared;
 
 	if (argc != 2)
 	{
@@ -25,17 +28,11 @@ int main(int argc, char **argv)
 	}
 
 	fgets(str, sizeof(str), input);
-	token = tokenize(str);
-	compared = strcmp(opcode, token);
-	if (compared = 0)
-	{
-		call_function(token, value);
-	}
-	else if (compared != 0)
-	{
-		unknown_error();
-		exit_error();
-	}
+	token = tokenizer(str);
+	instructions = get_instructions();
+
+
+	compared = compare(token, instructions);
 
 	fclose(input);
 	return(0);

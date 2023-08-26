@@ -58,4 +58,6 @@ typedef struct global_variable
 
 extern global_var var_global;
 
-void push(stack **stack, __attribute__((unused))unsigned int line_number);
+void push(stack_t **stack, __attribute__((unused))unsigned int line_number);
+
+#endif

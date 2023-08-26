@@ -25,6 +25,8 @@ int main(int argc, char **argv)
 	}
 
 	fgets(str, sizeof(str), input);
+    _compile(str);
+
 	token = tokenize(str);
 	compared = strcmp(opcode, token);
 	if (compared = 0)

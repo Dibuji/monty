@@ -9,7 +9,10 @@
 
 int main(int argc, char **argv)
 {
-	char str[LIMIT];
+	token_t token;
+	char str[1024];
+	instruction_t *instructions;
+	int compared;
 
 	if (argc != 2)
 	{
@@ -25,6 +28,7 @@ int main(int argc, char **argv)
 	}
 
 	fgets(str, sizeof(str), input);
+<<<<<<< HEAD
     _compile(str);
 
 	token = tokenize(str);
@@ -38,6 +42,13 @@ int main(int argc, char **argv)
 		unknown_error();
 		exit_error();
 	}
+=======
+	token = tokenizer(str);
+	instructions = get_instructions();
+
+
+	compared = compare(token, instructions);
+>>>>>>> e96fe1efb8de023c03f886d9c747a8ffcdd93ccd
 
 	fclose(input);
 	return(0);

@@ -5,9 +5,9 @@
  *
  * Return: void
  */
-void exit_error()
+void exit_error(void)
 {
-    exit(EXIT_FAILURE);
+exit(EXIT_FAILURE);
 }
 
 /**
@@ -15,12 +15,12 @@ void exit_error()
  *
  * Return: void
  */
-void usage_error()
+void usage_error(void)
 {
-    if (argc != 2)
-    {
-        fprintf(stderr, "USAGE: monty file\n");
-    }
+if (argc != 2)
+{
+fprintf(stderr, "USAGE: monty file\n");
+}
 }
 
 /**
@@ -28,17 +28,17 @@ void usage_error()
  *
  * Return: Nothing
  */
-void open_error()
+void open_error(void)
 {
-    fprintf(stderr, "Error: Can't open file <file>\n", argv[1]);
+fprintf(stderr, "Error: Can't open file <file>\n", argv[1]);
 }
 
 /**
- * unknown_error - prints unknown error to stderr if an invalid opcode is entered
+ * unknown_error - prints unknown error to stderr if opcode is invalid.
  *
  * Return: returns nothing
  */
-void unknown_error()
+void unknown_error(void)
 {
-    fprintf(stderr, "L%d: unknown instruction %s\n", line_count, line);
+fprintf(stderr, "L%d: unknown instruction %s\n", line_count, line);
 }

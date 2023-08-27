@@ -13,6 +13,7 @@ int main(int argc, char **argv)
 	char str[1024];
 	instruction_t *instructions;
 	int compared;
+    unsigned int line_number = 1;
 
 	if (argc != 2)
 	{
@@ -28,8 +29,9 @@ int main(int argc, char **argv)
 	}
 
 	fgets(str, sizeof(str), input);
-<<<<<<< HEAD
+
     _compile(str);
+    line_number++; /* store line number for every line read w/ fgets() */
 
 	token = tokenize(str);
 	compared = strcmp(opcode, token);
@@ -42,7 +44,7 @@ int main(int argc, char **argv)
 		unknown_error();
 		exit_error();
 	}
-=======
+
 	token = tokenizer(str);
 	instructions = get_instructions();
 

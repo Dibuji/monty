@@ -7,7 +7,7 @@
  */
 void exit_error(void)
 {
-exit(EXIT_FAILURE);
+	exit(EXIT_FAILURE);
 }
 
 /**
@@ -17,10 +17,10 @@ exit(EXIT_FAILURE);
  */
 void usage_error(void)
 {
-if (argc != 2)
-{
-fprintf(stderr, "USAGE: monty file\n");
-}
+	if (argc != 2)
+	{
+		printf(stderr, "USAGE: monty file\n");
+	}
 }
 
 /**
@@ -30,7 +30,7 @@ fprintf(stderr, "USAGE: monty file\n");
  */
 void open_error(void)
 {
-fprintf(stderr, "Error: Can't open file <file>\n", argv[1]);
+	fprintf(stderr, "Error: Can't open file <file>\n", argv[1]);
 }
 
 /**
@@ -40,5 +40,5 @@ fprintf(stderr, "Error: Can't open file <file>\n", argv[1]);
  */
 void unknown_error(void)
 {
-fprintf(stderr, "L%d: unknown instruction %s\n", line_count, line);
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_count, line);
 }
